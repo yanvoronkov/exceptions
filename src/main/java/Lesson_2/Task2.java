@@ -4,28 +4,16 @@ import java.util.Scanner;
 
 public class Task2 {
 
-    public static void main(String[] args) {
-        float number = readFloatFromUser();
-        System.out.println("Вы ввели число: " + number);
-    }
 
-    private static float readFloatFromUser() {
-        Scanner scanner = new Scanner(System.in);
-        float number = 0;
-        boolean validInput = false;
-
-        while (!validInput) {
-            System.out.print("Введите дробное число: ");
-            String input = scanner.nextLine();
-
+        public static void main(String[] args) {
+            int[] intArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
             try {
-                number = Float.parseFloat(input);
-                validInput = true;
-            } catch (NumberFormatException e) {
-                System.out.println("Некорректный ввод. Пожалуйста, введите дробное число.");
+                int d = 0;
+                double catchedRes1 = intArray[8] / d;
+                System.out.println("catchedRes1 = " + catchedRes1);
+            } catch (ArithmeticException e) {
+                System.out.println("Catching exception: " + e);
             }
-        }
 
-        return number;
-    }
+        }
 }
